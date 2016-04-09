@@ -1,0 +1,252 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA36E01C1CB6BC3C00FE2756 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = BA36E01B1CB6BC3C00FE2756 /* main.cc */; };
+		BA36E0251CB8B25A00FE2756 /* test.cc in Sources */ = {isa = PBXBuildFile; fileRef = BA36E0241CB8B25A00FE2756 /* test.cc */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BA36E0161CB6BC3B00FE2756 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BA36E0181CB6BC3B00FE2756 /* HackersDelight */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HackersDelight; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA36E01B1CB6BC3C00FE2756 /* main.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
+		BA36E0221CB8B15100FE2756 /* test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
+		BA36E0231CB8B20E00FE2756 /* base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = base.h; sourceTree = "<group>"; };
+		BA36E0241CB8B25A00FE2756 /* test.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cc; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA36E0151CB6BC3B00FE2756 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA36E00F1CB6BC3B00FE2756 = {
+			isa = PBXGroup;
+			children = (
+				BA36E01A1CB6BC3C00FE2756 /* HackersDelight */,
+				BA36E0191CB6BC3C00FE2756 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BA36E0191CB6BC3C00FE2756 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA36E0181CB6BC3B00FE2756 /* HackersDelight */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA36E01A1CB6BC3C00FE2756 /* HackersDelight */ = {
+			isa = PBXGroup;
+			children = (
+				BA36E0231CB8B20E00FE2756 /* base.h */,
+				BA36E01B1CB6BC3C00FE2756 /* main.cc */,
+				BA36E0241CB8B25A00FE2756 /* test.cc */,
+				BA36E0221CB8B15100FE2756 /* test.h */,
+			);
+			path = HackersDelight;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA36E0171CB6BC3B00FE2756 /* HackersDelight */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA36E01F1CB6BC3C00FE2756 /* Build configuration list for PBXNativeTarget "HackersDelight" */;
+			buildPhases = (
+				BA36E0141CB6BC3B00FE2756 /* Sources */,
+				BA36E0151CB6BC3B00FE2756 /* Frameworks */,
+				BA36E0161CB6BC3B00FE2756 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HackersDelight;
+			productName = HackersDelight;
+			productReference = BA36E0181CB6BC3B00FE2756 /* HackersDelight */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA36E0101CB6BC3B00FE2756 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = keni;
+				TargetAttributes = {
+					BA36E0171CB6BC3B00FE2756 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = BA36E0131CB6BC3B00FE2756 /* Build configuration list for PBXProject "HackersDelight" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BA36E00F1CB6BC3B00FE2756;
+			productRefGroup = BA36E0191CB6BC3C00FE2756 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA36E0171CB6BC3B00FE2756 /* HackersDelight */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA36E0141CB6BC3B00FE2756 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA36E01C1CB6BC3C00FE2756 /* main.cc in Sources */,
+				BA36E0251CB8B25A00FE2756 /* test.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BA36E01D1CB6BC3C00FE2756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BA36E01E1CB6BC3C00FE2756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BA36E0201CB6BC3C00FE2756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BA36E0211CB6BC3C00FE2756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA36E0131CB6BC3B00FE2756 /* Build configuration list for PBXProject "HackersDelight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA36E01D1CB6BC3C00FE2756 /* Debug */,
+				BA36E01E1CB6BC3C00FE2756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA36E01F1CB6BC3C00FE2756 /* Build configuration list for PBXNativeTarget "HackersDelight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA36E0201CB6BC3C00FE2756 /* Debug */,
+				BA36E0211CB6BC3C00FE2756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA36E0101CB6BC3B00FE2756 /* Project object */;
+}
