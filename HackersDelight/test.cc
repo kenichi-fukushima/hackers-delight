@@ -1,6 +1,7 @@
 #include "test.h"
 
 #include <iostream>
+#include <random>
 #include <sstream>
 
 namespace test {
@@ -33,6 +34,16 @@ Word ToW(const std::string& s) {
     w += (s[i] == '1' ? 1 : 0);
   }
   return w;
+}
+
+Word SampleWord() {
+  static std::default_random_engine *generator;
+  static std::uniform_int_distribution<Word> *distribution;
+  if (!distribution) {
+    generator = new std::default_random_engine;
+    distribution = new std::uniform_int_distribution<Word>(0, (Word)~0);
+  }
+  return (*distribution)(*generator);
 }
 
 void RegisterTest(TestCase *test) {

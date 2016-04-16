@@ -12,6 +12,7 @@ namespace test {
 
 std::string ToS(Word w);
 Word ToW(const std::string& s);
+Word SampleWord();
 
 class TestCase {
  public:
@@ -49,6 +50,28 @@ void RunTests();
     } \
   } while (0)
 
+// Generates a property test to check equivalence of two binary functions.
+#define EQ_BINARY_FUNC(a__, b__) \
+  do { \
+    /* These corner cases are always checked */ \
+    std::vector<std::pair<Word, Word>> inputs = { \
+        {0, 0}, \
+        {0, ~0}, \
+        {~0, 0}, \
+        {~0, ~0}, \
+    }; \
+    for (int i = 0; i < 100; ++i) { \
+      inputs.push_back(std::make_pair(test::SampleWord(), \
+                                      test::SampleWord())); \
+    } \
+    for (int i = 0; i < inputs.size(); ++i) { \
+      std::pair<Word, Word> p = inputs[i]; \
+      if (a__(p.first, p.second) != b__(p.first, p.second)) { \
+        __builtin_trap(); \
+      } \
+    } \
+  } while (0)
+
 #define TEST(name__) \
   class name__##Test : public test::TestCase { \
    public: \
@@ -67,6 +90,7 @@ void RunTests();
 #else  // ENABLE_TESTS
 
 #define EQ(converter, input, expected)
+#define EQ_BINARY_FUNC(a__, b__)
 #define TEST(name__) void WillNotRun##name__()
 
 #endif  // ENABLE_TESTS

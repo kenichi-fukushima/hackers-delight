@@ -1,6 +1,8 @@
 #include "base.h"
 #include "test.h"
 
+#pragma mark 2.1 Manipulating rightmost bits
+
 Word TurnOffRightmost1(Word x) {
   return x & (x - 1);
 }
@@ -179,6 +181,12 @@ TEST(TurnOffRightmostContiguous1s) {
   EQ(TurnOffRightmostContiguous1s, 11111111, 00000000);
 }
 
+#pragma mark De Morgan's Laws Extended
+
+TEST(DeMorganBitwiseAnd) {
+  EQ_BINARY_FUNC(BINARY_FUNC( ~(x & y) ),
+                 BINARY_FUNC( ~x | ~y) );
+}
 
 int main(int argc, const char * argv[]) {
   test::RunTests();
