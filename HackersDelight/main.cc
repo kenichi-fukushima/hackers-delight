@@ -1,7 +1,7 @@
 #include "base.h"
 #include "test.h"
 
-#pragma mark 2.1 Manipulating rightmost bits
+#pragma mark - 2-1 Manipulating rightmost bits
 
 Word TurnOffRightmost1(Word x) {
   return x & (x - 1);
@@ -235,6 +235,29 @@ TEST(DeMorganArithmeticSubtract) {
   EQ_BINARY_FUNC(BINARY_FUNC( ~(x - y) ),
                  BINARY_FUNC( ~x + y ));
 }
+
+#pragma mark A Novel Application
+
+Word NextCombination(Word x) {
+  Word s = IsolateRightmost1(x);
+  Word r = x + s;
+  Word y = r | (((x ^ r) / s) >> 2);
+  return y;
+}
+
+TEST(NextCombination) {
+  EQ(NextCombination, 00110101, 00110110);
+  EQ(NextCombination, 00110110, 00111001);
+  EQ(NextCombination, 00111001, 00111010);
+  EQ(NextCombination, 00111100, 01000111);
+  EQ(NextCombination, 01000111, 01001011);
+
+  // NOTE: The function breaks when input is "maximum" combination.
+  EQ(NextCombination, 11110000, 00000011);  // This would be 1_00000111
+  EQ(NextCombination, 11111111, 00111111);  // This would be 1_01111111
+}
+
+#pragma mark - 2-2 Addition Combined with Logical Operations
 
 int main(int argc, const char * argv[]) {
   test::RunTests();
