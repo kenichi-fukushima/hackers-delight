@@ -259,6 +259,55 @@ TEST(NextCombination) {
 
 #pragma mark - 2-2 Addition Combined with Logical Operations
 
+TEST(CombinationOfOrdinaryAlgebraAndBooleanAlgebra) {
+  // a, b
+  EQ_UNARY_FUNC(UNARY_FUNC( -x ),
+                UNARY_FUNC( ~x + 1 ),
+                UNARY_FUNC( ~(x - 1 )) );
+  // c
+  EQ_UNARY_FUNC(UNARY_FUNC( ~x ),
+                UNARY_FUNC( -x - 1 ));
+  // d
+  EQ_UNARY_FUNC(UNARY_FUNC( -(~x) ),
+                UNARY_FUNC( x + 1 ));
+  // e
+  EQ_UNARY_FUNC(UNARY_FUNC( ~(-x) ),
+                UNARY_FUNC( x - 1 ));
+  // f, g, h, i
+  EQ_BINARY_FUNC(BINARY_FUNC( x + y ),
+                 BINARY_FUNC( x - ~y - 1 ),
+                 BINARY_FUNC( (x ^ y) + 2 * (x & y) ),
+                 BINARY_FUNC( (x | y) + (x & y) ),
+                 BINARY_FUNC( 2 * (x | y) - (x ^ y) ));
+  // j, k, l, m
+  EQ_BINARY_FUNC(BINARY_FUNC( x - y ),
+                 BINARY_FUNC( x + ~y + 1 ),
+                 BINARY_FUNC( (x ^ y) - 2 * (~x & y) ),
+                 BINARY_FUNC( (x & ~y) - (~x & y) ),
+                 BINARY_FUNC( 2 * (x & ~y) - (x ^ y) ));
+  // n
+  EQ_BINARY_FUNC(BINARY_FUNC( x ^ y ),
+                 BINARY_FUNC( (x | y) - (x & y) ));
+  // o, p
+  EQ_BINARY_FUNC(BINARY_FUNC( x & ~y ),
+                 BINARY_FUNC( (x | y) - y ),
+                 BINARY_FUNC( x - (x & y) ));
+  // q, r
+  EQ_BINARY_FUNC(BINARY_FUNC( ~(x - y) ),
+                 BINARY_FUNC( y - x - 1 ),
+                 BINARY_FUNC( ~x + y ));
+  // s, t
+  EQ_BINARY_FUNC(BINARY_FUNC( BitwiseEquiv(x, y) ),
+                 BINARY_FUNC( (x & y) - (x | y) - 1 ),
+                 BINARY_FUNC( (x & y) + ~(x | y ) ));
+  // u
+  EQ_BINARY_FUNC(BINARY_FUNC( x | y ),
+                 BINARY_FUNC( (x & ~y) + y ));
+  // v
+  EQ_BINARY_FUNC(BINARY_FUNC( x & y ),
+                 BINARY_FUNC( (~x | y) - ~x));
+}
+
 int main(int argc, const char * argv[]) {
   test::RunTests();
   return 0;

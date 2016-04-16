@@ -1,6 +1,8 @@
 #ifndef TEST_H__
 #define TEST_H__
 
+#include <functional>
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -50,9 +52,32 @@ void RunTests();
     } \
   } while (0)
 
-// Generates a property test to check equivalence of two binary functions.
-#define EQ_BINARY_FUNC(a__, b__) \
+// Generates a property test to check equivalence of two unary functions.
+#define EQ_UNARY_FUNC(f__, g__, ...) \
   do { \
+    std::vector<UnaryFunctionWrapper> funcs = { f__, g__, ##__VA_ARGS__ }; \
+    /* These corner cases are always checked */ \
+    std::vector<Word> inputs = {0, (Word)~0}; \
+    for (int i = 0; i < 100; ++i) { \
+      inputs.push_back(test::SampleWord()); \
+    } \
+    for (int m = 0; m < funcs.size(); ++m) { \
+      auto f = funcs[m]; \
+      for (int n = m + 1; n < funcs.size(); ++n) { \
+        auto g = funcs[n]; \
+        for (int i = 0; i < inputs.size(); ++i) { \
+          if (f.function()(inputs[i]) != g.function()(inputs[i])) { \
+            __builtin_trap(); \
+          } \
+        } \
+      } \
+    } \
+  } while (0)
+
+// Generates a property test to check equivalence of two binary functions.
+#define EQ_BINARY_FUNC(f__, g__, ...) \
+  do { \
+    std::vector<BinaryFunctionWrapper> funcs = { f__, g__, ##__VA_ARGS__ }; \
     /* These corner cases are always checked */ \
     std::vector<std::pair<Word, Word>> inputs = { \
         {0, 0}, \
@@ -64,10 +89,17 @@ void RunTests();
       inputs.push_back(std::make_pair(test::SampleWord(), \
                                       test::SampleWord())); \
     } \
-    for (int i = 0; i < inputs.size(); ++i) { \
-      std::pair<Word, Word> p = inputs[i]; \
-      if (a__(p.first, p.second) != b__(p.first, p.second)) { \
-        __builtin_trap(); \
+    for (int m = 0; m < funcs.size(); ++m) { \
+      auto f = funcs[m]; \
+      for (int n = m + 1; n < funcs.size(); ++n) { \
+        auto g = funcs[n]; \
+        for (int i = 0; i < inputs.size(); ++i) { \
+          std::pair<Word, Word> p = inputs[i]; \
+          if (f.function()(p.first, p.second) \
+              != g.function()(p.first, p.second)) { \
+            __builtin_trap(); \
+          } \
+        } \
       } \
     } \
   } while (0)
