@@ -1,5 +1,6 @@
 #include "test.h"
 
+#include <iostream>
 #include <sstream>
 
 namespace test {
@@ -46,7 +47,10 @@ void RunTests() {
     return;
   }
   for (int i = 0; i < gTests->size(); ++i) {
+    const TestCase& test_case= *(*gTests)[i];
+    std::cout << "Start " << test_case.name() << "\n";
     (*gTests)[i]->Run();
+    std::cout << "Finish " << test_case.name() << "\n";
   }
 }
 

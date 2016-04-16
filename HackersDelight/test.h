@@ -15,7 +15,15 @@ Word ToW(const std::string& s);
 
 class TestCase {
  public:
+  explicit TestCase(const std::string& name)
+      : name_(name) {}
+
+  const std::string& name() const { return name_; }
+
   virtual void Run() = 0;
+
+ private:
+  const std::string name_;
 };
 
 void RegisterTest(TestCase *test);
@@ -44,14 +52,16 @@ void RunTests();
 #define TEST(name__) \
   class name__##Test : public test::TestCase { \
    public: \
+    explicit name__##Test(const std::string& name) \
+        : test::TestCase(name) {} \
     static name__##Test *Create() { \
-      return new name__##Test; \
+      return new name__##Test(#name__); \
     } \
     virtual void Run(); \
     static name__##Test* instance; \
   }; \
   name__##Test *name__##Test::instance = \
-  test::CreateAndRegisterTest<name__##Test>(); \
+      test::CreateAndRegisterTest<name__##Test>(); \
   void name__##Test::Run()
 
 #else  // ENABLE_TESTS
