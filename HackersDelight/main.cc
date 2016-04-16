@@ -185,7 +185,55 @@ TEST(TurnOffRightmostContiguous1s) {
 
 TEST(DeMorganBitwiseAnd) {
   EQ_BINARY_FUNC(BINARY_FUNC( ~(x & y) ),
-                 BINARY_FUNC( ~x | ~y) );
+                 BINARY_FUNC( ~x | ~y ));
+}
+
+TEST(DeMorganBitwiseOr) {
+  EQ_BINARY_FUNC(BINARY_FUNC( ~(x | y) ),
+                 BINARY_FUNC( ~x & ~y ));
+}
+
+TEST(DeMorganIncrement) {
+  EQ_BINARY_FUNC(BINARY_FUNC( ~(x + 1) ),
+                 BINARY_FUNC( ~x - 1 ));
+}
+
+TEST(DeMorganDecrement) {
+  EQ_BINARY_FUNC(BINARY_FUNC( ~(x - 1) ),
+                 BINARY_FUNC( ~x + 1 ));
+}
+
+TEST(DeMorganNegative) {
+  EQ_BINARY_FUNC(BINARY_FUNC( ~(-x) ),
+                 BINARY_FUNC( x - 1 ));
+}
+
+TEST(DeMorganBitwiseXor) {
+  EQ_BINARY_FUNC(BINARY_FUNC( ~(x ^ y) ),
+                 BINARY_FUNC( ~x ^ y ));
+  // Note that this test is trivial because
+  // BitwiseEquiv is implement in terms of ^.
+  EQ_BINARY_FUNC(BINARY_FUNC( ~(x ^ y) ),
+                 BINARY_FUNC( BitwiseEquiv(x, y) ));
+}
+
+TEST(DeMorganBitwiseEquiv) {
+  EQ_BINARY_FUNC(BINARY_FUNC( ~BitwiseEquiv(x, y) ),
+                 BINARY_FUNC( BitwiseEquiv(~x, y) ));
+  // Note that this test is trivial because
+  // BitwiseEquiv is implement in terms of ^.
+  EQ_BINARY_FUNC(BINARY_FUNC( ~BitwiseEquiv(x, y) ),
+                 BINARY_FUNC( x ^ y ));
+}
+
+TEST(DeMorganArithmeticSum) {
+  EQ_BINARY_FUNC(BINARY_FUNC( ~(x + y) ),
+                 BINARY_FUNC( ~x - y ));
+}
+
+TEST(DeMorganArithmeticSubtract) {
+  EQ_BINARY_FUNC(BINARY_FUNC( ~(x - y) ),
+                 BINARY_FUNC( ~x + y ));
 }
 
 int main(int argc, const char * argv[]) {

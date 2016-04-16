@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA36E01C1CB6BC3C00FE2756 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = BA36E01B1CB6BC3C00FE2756 /* main.cc */; };
 		BA36E0251CB8B25A00FE2756 /* test.cc in Sources */ = {isa = PBXBuildFile; fileRef = BA36E0241CB8B25A00FE2756 /* test.cc */; };
+		BA3848941CC267F2000D5D36 /* base.cc in Sources */ = {isa = PBXBuildFile; fileRef = BA3848931CC267F2000D5D36 /* base.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		BA36E0221CB8B15100FE2756 /* test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
 		BA36E0231CB8B20E00FE2756 /* base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = base.h; sourceTree = "<group>"; };
 		BA36E0241CB8B25A00FE2756 /* test.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cc; sourceTree = "<group>"; };
+		BA3848931CC267F2000D5D36 /* base.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = base.cc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				BA36E0231CB8B20E00FE2756 /* base.h */,
+				BA3848931CC267F2000D5D36 /* base.cc */,
 				BA36E01B1CB6BC3C00FE2756 /* main.cc */,
 				BA36E0241CB8B25A00FE2756 /* test.cc */,
 				BA36E0221CB8B15100FE2756 /* test.h */,
@@ -127,6 +130,7 @@
 			files = (
 				BA36E01C1CB6BC3C00FE2756 /* main.cc in Sources */,
 				BA36E0251CB8B25A00FE2756 /* test.cc in Sources */,
+				BA3848941CC267F2000D5D36 /* base.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +249,7 @@
 				BA36E0211CB6BC3C00FE2756 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
